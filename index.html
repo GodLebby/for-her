@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lablab Files 🌸</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Playfair+Display:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="bgMusic" loop><source src="music.mp3" type="audio/mpeg"></audio>
+
+    <div id="overlay">
+        <button onclick="startStory()">For my love's eyes only 🌸</button>
+    </div>
+
+    <div class="heart-bg" id="heart-container"></div>
+
+    <div id="main-content">
+        <header class="hero">
+            <h1>For my Beautiful and Sweet Lablab</h1>
+            <p>Our Year in Memories</p>
+        </header>
+
+        <div class="gallery-container">
+            <div class="nav-controls">
+                <button class="nav-btn up" onclick="moveGallery(-1)">▲</button>
+                <button class="nav-btn down" onclick="moveGallery(1)">▼</button>
+            </div>
+            
+            <div class="gallery-window">
+                <div class="gallery-track" id="track">
+                    <div class="slide active"><div class="polaroid"><span class="sticker s1">💖</span><span class="sticker s2">✨</span><img src="images/photo1.jpg"><p class="caption">February 2025</p><p class="sub-caption">"Our Baguio Birthday Trip"</p></div></div>
+                    <div class="slide"><div class="polaroid"><span class="sticker s3">💜</span><img src="images/photo2.jpg"><p class="caption">March</p><p class="sub-caption">"Sweetness with you"</p></div></div>
+                    <div class="slide"><div class="polaroid"><span class="sticker s1">💕</span><span class="sticker s4">✨</span><img src="images/photo3.jpg"><p class="caption">April</p><p class="sub-caption">"Dofi Kofee Out"</p></div></div>
+                    <div class="slide"><div class="polaroid"><span class="sticker s2">✨</span><img src="images/photo4.jpg"><p class="caption">May</p><p class="sub-caption">"Our Cute Photoshoot"</p></div></div>
+                    <div class="slide"><div class="polaroid"><span class="sticker s3">💗</span><img src="images/photo5.PNG"><p class="caption">June</p><p class="sub-caption">"Bataan Getaway"</p></div></div>
+                    <div class="slide"><div class="polaroid"><span class="sticker s4">✨</span><img src="images/photo6.jpg"><p class="caption">July</p><p class="sub-caption">"Glam Cafe Date"</p></div></div>
+                    <div class="slide"><div class="polaroid"><span class="sticker s1">💘</span><img src="images/photo7.jpg"><p class="caption">August</p><p class="sub-caption">"Cafe Josefina"</p></div></div>
+                    <div class="slide"><div class="polaroid"><span class="sticker s2">✨</span><img src="images/photo8.jpg"><p class="caption">September</p><p class="sub-caption">"Clark Lunch Out"</p></div></div>
+                    <div class="slide"><div class="polaroid"><span class="sticker s3">💖</span><img src="images/photo9.jpg"><p class="caption">October</p><p class="sub-caption">"Birthday Night with my love"</p></div></div>
+                    <div class="slide"><div class="polaroid"><span class="sticker s4">✨</span><img src="images/photo10.jpg"><p class="caption">November</p><p class="sub-caption">"Wok it Out Date"</p></div></div>
+                    <div class="slide"><div class="polaroid"><span class="sticker s1">💜</span><img src="images/photo11.jpg"><p class="caption">December</p><p class="sub-caption">"Ending the Year with you"</p></div></div>
+                    <div class="slide"><div class="polaroid"><span class="sticker s1">💖</span><span class="sticker s2">✨</span><img src="images/photo12.jpg"><p class="caption">January 2026</p><p class="sub-caption">"Starting the year with my favorite person"</p></div></div>
+                    <div class="slide"><div class="polaroid"><span class="sticker s1">💖</span><span class="sticker s2">✨</span><img src="images/cat1.jpg"><p class="caption">Cosmo 🐾</p><p class="sub-caption">"Happy birthday mommy! Thanks for taking care of me! 🐟"</p></div></div>
+                    <div class="slide"><div class="polaroid"><span class="sticker s4">✨</span><img src="images/cat2.jpg"><p class="caption">Kobe 🐾</p><p class="sub-caption">"The newest member of our little family."</p></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="counter-box">
+            <h3>Time Spent With You:</h3>
+            <div id="timer">00d 00h 00m 00s</div>
+        </div>
+
+        <section class="letter-section">
+            <div class="letter-card">
+                <h2>Hi my sweet and gorgeous Lablab,</h2>
+                <div class="letter-body">
+                    <p>Happy Anniversary and Birthday! Every second of this year was better because of you.</p>
+                    <p>Thank you for always loving me and taking care of us. I'm happy that you've become a part of my life and that I've become a part of yours.</p>
+                    <p>I hope you like this small page that I made for us that showcases our special dates throughout the year.</p>
+                    <p>I love you so so much and I'm excited to create more memories with you and our boys.</p>
+                </div>
+                <div class="signature">
+                    <span>Always yours, your handsome Lablab,</span>
+                    <span class="big-name">Caleb</span>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

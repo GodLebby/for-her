@@ -1,0 +1,140 @@
+:root {
+    --light-purple: #e2d1f9;
+    --soft-pink: #fce1e4;
+    --deep-pink: #ff85a1;
+    --purple-text: #6b4c9a;
+}
+
+/* 1. LOCK VIEWPORT */
+html, body {
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    overflow: hidden; /* Stops whole-page scrolling for gallery stability */
+    background: var(--light-purple);
+    font-family: 'Playfair Display', serif;
+}
+
+/* 2. ENTRANCE OVERLAY */
+#overlay {
+    position: fixed; inset: 0;
+    background: white; z-index: 10000;
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.8s ease;
+}
+
+#overlay button {
+    background: var(--soft-pink); border: 2px solid var(--deep-pink);
+    color: var(--deep-pink); padding: 15px 35px;
+    font-family: 'Caveat', cursive; font-size: 1.8rem; border-radius: 50px;
+    cursor: pointer;
+}
+
+/* 3. THE HEART LAYER FIX */
+.heart-bg {
+    position: fixed; inset: 0; 
+    z-index: 0; /* BOTTOM LAYER */
+    background: linear-gradient(to bottom, var(--light-purple), var(--soft-pink));
+    pointer-events: none;
+}
+
+.falling-heart {
+    position: absolute;
+    z-index: 1; /* MIDDLE LAYER: Above background, below photos */
+    opacity: 0.8;
+    animation: fallDown linear infinite;
+    pointer-events: none;
+    /* Forces iPhone to treat this as text, not a red emoji */
+    font-family: "Times New Roman", serif; 
+}
+
+@keyframes fallDown {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+#main-content {
+    position: relative;
+    z-index: 2; /* TOP LAYER: Interaction layer */
+    height: 100vh;
+    overflow-y: auto; /* Allows scrolling to the letter at the end */
+}
+
+/* 4. HERO & GALLERY */
+.hero { text-align: center; padding: 50px 15px 10px; }
+.hero h1 { font-family: 'Caveat', cursive; font-size: 2.5rem; color: var(--deep-pink); margin: 0; }
+
+.gallery-container {
+    display: flex; flex-direction: column; align-items: center;
+    position: relative; width: 100vw; margin-bottom: 30px;
+}
+
+.gallery-window {
+    width: 90vw; height: 550px; 
+    overflow: hidden; position: relative;
+}
+
+.gallery-track {
+    display: flex; flex-direction: column;
+    position: absolute; width: 100%;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slide {
+    height: 550px; width: 100%; 
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0.2; transition: opacity 0.5s;
+}
+
+.slide.active { opacity: 1; }
+
+.polaroid {
+    background: white; padding: 10px 10px 65px 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative; width: 85%; text-align: center;
+}
+
+.polaroid img { width: 100%; height: 350px; object-fit: cover; }
+
+.caption { font-family: 'Caveat', cursive; font-size: 1.8rem; color: var(--deep-pink); margin: 15px 0 2px; }
+.sub-caption { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--purple-text); font-style: italic; }
+
+/* 5. NAVIGATION (UP ARROW LOGIC) */
+.nav-controls {
+    position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 20px; z-index: 100;
+}
+
+.nav-btn {
+    background: var(--deep-pink); color: white; border: none;
+    width: 45px; height: 45px; border-radius: 50%; font-size: 1.2rem;
+    transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+/* Logic class for hiding the up arrow */
+.btn-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* 6. STICKERS & LETTER */
+.sticker { position: absolute; font-size: 2.8rem; z-index: 20; }
+.s1 { top: -25px; left: -10px; transform: rotate(-15deg); }
+.s2 { top: -20px; right: -10px; transform: rotate(15deg); }
+
+.counter-box {
+    text-align: center; padding: 20px; background: rgba(255, 255, 255, 0.5);
+    margin: 20px auto; width: 85%; border-radius: 20px; border: 2px solid var(--deep-pink);
+}
+
+#timer { font-size: 1.4rem; font-weight: bold; color: var(--purple-text); }
+
+.letter-section { padding: 40px 20px 100px; display: flex; justify-content: center; }
+.letter-card {
+    background: rgba(255, 255, 255, 0.95); padding: 35px 30px;
+    border-radius: 25px; width: 100%; max-width: 500px; text-align: center;
+}
+
+.big-name { font-family: 'Caveat', cursive; font-size: 4rem; display: block; color: var(--deep-pink); transform: rotate(-3deg); margin-top: 10px; }
